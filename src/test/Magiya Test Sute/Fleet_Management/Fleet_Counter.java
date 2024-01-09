@@ -17,7 +17,7 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-public class test_counter {
+public class Fleet_Counter {
 
     public static ChromeOptions options =new ChromeOptions();
     public static WebDriver driver = new ChromeDriver(options);
@@ -32,10 +32,8 @@ public class test_counter {
         driver.get("https://next.magiya.lk/app/login"); ////////////////// change any ULR///////////////////
     }
 
-    @Test
-
-    void teststeps() throws IOException, InterruptedException {
-
+    @Test(priority = 1)
+    void Login() throws IOException, InterruptedException {
         driver.findElement(By.id("email")).sendKeys("web@zuse.lk");
         driver.findElement(By.id("password")).sendKeys("Kalupusa321@");
 
@@ -46,7 +44,9 @@ public class test_counter {
 
         WebElement submitButton = driver.findElement(By.xpath("//button[@type='submit']"));
         submitButton.click();
-
+    }
+    @Test(priority = 2)
+    void Button() throws InterruptedException {
         // Waiting (using explicit waits instead of Thread.sleep is recommended)
         // Replace these Thread.sleep() with explicit waits where possible
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
@@ -64,6 +64,9 @@ public class test_counter {
         WebElement create_Brand = driver.findElement(By.xpath("//*[@id=\"nova\"]/div[2]/div[2]/div[1]/div[1]/div[2]/div/a"));
         create_Brand.click();
 
+    }
+    @Test(priority = 3)
+    void Create() throws InterruptedException, IOException {
         String filePath = "src/test/java/Input_user_data/Fleet_user_data/ Fleet Counters"; // Replace with the path to your userdata.txt file
 
         // Read data from the file and store it in a list
@@ -111,15 +114,21 @@ public class test_counter {
         driver.findElement(By.id("elevation-create-fleet-counter-text-field")).sendKeys(userData.get(5));
 
 
-
-
-        //submit
-
+    }
+    @Test(priority = 4)
+    void Submit(){
         WebElement fleetField_submit = driver.findElement(By.xpath("//button[@type='submit']"));
         fleetField_submit.click();
-
+    }
+    //submit
+    @Test(priority = 5)
+    void quite(){
         {
             driver.quit();
         }
     }
-}
+
+
+
+    }
+

@@ -29,10 +29,10 @@ public class schedules {
         driver.get("https://next.magiya.lk/app/login"); ////////////////// change any ULR///////////////////
     }
 
-    @Test
-    void teststeps() throws IOException, InterruptedException {
+    @Test(priority =1)
+    void loging() throws IOException, InterruptedException {
 
-        driver.findElement(By.id("driver")).sendKeys("web@zuse.lk");
+        driver.findElement(By.id("email")).sendKeys("web@zuse.lk");
         driver.findElement(By.id("password")).sendKeys("Kalupusa321@");
 
         WebElement rememberMeCheckbox = driver.findElement(By.xpath("//span[normalize-space()='Remember me']"));
@@ -42,6 +42,9 @@ public class schedules {
 
         WebElement submitButton = driver.findElement(By.xpath("//button[@type='submit']"));
         submitButton.click();
+    }
+    @Test(priority = 2)
+    void shift() throws InterruptedException {
 
         // Waiting (using explicit waits instead of Thread.sleep is recommended)
         // Replace these Thread.sleep() with explicit waits where possible
@@ -57,6 +60,9 @@ public class schedules {
         Thread.sleep(3000);
         WebElement create_Brand = driver.findElement(By.xpath("//*[@id=\"nova\"]/div[2]/div[2]/div[1]/div[1]/div[2]/div/a"));
         create_Brand.click();
+    }
+    @Test(priority = 3)
+    void data() throws IOException, InterruptedException {
 
         String filePath = "src/test/java/Input_user_data/Trip_user_data/Schedules"; // Replace with the path to your userdata.txt file
 
@@ -66,7 +72,7 @@ public class schedules {
         List<String> userData = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader(filePath));
         String line;
-        while ((line = reader.readLine()) != null) {
+        while (( line = reader.readLine() ) != null) {
             userData.add(line);
         }
         reader.close();
@@ -109,18 +115,20 @@ public class schedules {
         driver.findElement(By.xpath("(//div[@class='text-sm font-semibold leading-normal text-white dark:text-gray-900'])[1]")).click();
 
 
-        //WebElement Add_Seat_Layout = driver.findElement(By.id("name-default-text-field"));
-        //Add_Seat_Layout.click();
-
-        //submit
+        WebElement Add_Seat_Layout = driver.findElement(By.id("name-default-text-field"));
+        Add_Seat_Layout.click();
+    }
+    @Test(priority = 4)
+    void submit(){
 
         WebElement fleetField_submit = driver.findElement(By.xpath("//button[@type='submit']"));
         fleetField_submit.click();
-
+    }
+    @Test(priority = 4)
+    void exit()
         {
             driver.quit();
         }
 
 
     }
-}

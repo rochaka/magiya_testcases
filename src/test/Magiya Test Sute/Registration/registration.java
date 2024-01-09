@@ -31,10 +31,9 @@ public class registration {
         driver.get("https://next.magiya.lk/app/login"); ////////////////// change any ULR///////////////////
     }
 
-    @SuppressWarnings("ReassignedVariable")
-    @Test
-    void teststeps() throws IOException {
 
+    @Test(priority = 1)
+    void loging() throws IOException {
         driver.findElement(By.id("email")).sendKeys("web@zuse.lk");
         driver.findElement(By.id("password")).sendKeys("Kalupusa321@");
 
@@ -45,7 +44,9 @@ public class registration {
 
         WebElement submitButton = driver.findElement(By.xpath("//button[@type='submit']"));
         submitButton.click();
-
+    }
+    @Test(priority = 2)
+    void Shift(){
         // Waiting (using explicit waits instead of Thread.sleep is recommended)
         // Replace these Thread.sleep() with explicit waits where possible
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
@@ -63,7 +64,9 @@ public class registration {
 
         WebElement createUser = driver.findElement(By.xpath("(//a[@class='shrink-0 h-9 px-4 focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring text-white dark:text-gray-800 inline-flex items-center font-bold shadow rounded focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring bg-primary-500 hover:bg-primary-400 active:bg-primary-600 text-white dark:text-gray-800 inline-flex items-center font-bold px-4 h-9 text-sm shrink-0 h-9 px-4 focus:outline-none ring-primary-200 dark:ring-gray-600 focus:ring text-white dark:text-gray-800 inline-flex items-center font-bold'])[1]"));
         createUser.click();
-
+    }
+    @Test(priority = 3)
+    void User() throws IOException {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
 
         /////////////////////////////////////
@@ -95,10 +98,13 @@ public class registration {
 
         driver.findElement(By.xpath("(//div[@class='text-sm font-semibold leading-normal text-white dark:text-gray-900'])[1]")).click();
         driver.findElement(By.id("mobile-create-user-text-field")).sendKeys(userData.get(5));
-
+    }
+    @Test(priority = 4)
+    void Submit(){
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-
+    }
+    @Test(priority = 5)
+    void compire() {
         WebElement errorMessage = driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[2]/div[1]/form/div[1]/div/div/div[2]/div[2]/p")); // Replace with actual error message element locator
 
         try {
@@ -115,9 +121,9 @@ public class registration {
             // No need for explicit passing as TestNG will consider the test passed
             // if it reaches this point without encountering any failures
         }
-
-
-        {
+    }
+    @Test(priority = 6)
+    void quit() {
             driver.quit();
         }
 
@@ -125,4 +131,4 @@ public class registration {
     }
 
 
-}
+

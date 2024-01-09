@@ -19,5 +19,6 @@
         </list>
       </option>
     </inspection_tool>
+    <inspection_tool class="WrongPackageStatement" enabled="true" level="INFORMATION" enabled_by_default="true" />
   </profile>
 </component>
