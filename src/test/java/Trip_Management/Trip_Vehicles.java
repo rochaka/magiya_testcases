@@ -1,11 +1,8 @@
 package Trip_Management;
 
+import Loging_details.Login;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.BufferedReader;
@@ -15,33 +12,16 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
+import static Loging_details.Login.driver;
+
+
 public class Trip_Vehicles {
 
-    public static ChromeOptions options = new ChromeOptions();
-    public static WebDriver driver = new ChromeDriver(options);
-
-    @BeforeTest
-    void Setup() {
-
-        options.addArguments("--remort-allow-origins");
-        System.setProperty("web driver.chrome.driver", System.getProperty("user.dir") + "src/test/resources/chromedriver.exe");
-
-        driver.get("https://next.magiya.lk/app/login"); ////////////////// change any ULR///////////////////
-    }
-
-    @Test(priority = 1)
-    void loging(){
-
-        driver.findElement(By.id("email")).sendKeys("web@zuse.lk");
-        driver.findElement(By.id("password")).sendKeys("Kalupusa321@");
-
-        WebElement rememberMeCheckbox = driver.findElement(By.xpath("//span[normalize-space()='Remember me']"));
-        if (!rememberMeCheckbox.isSelected()) {
-            rememberMeCheckbox.click();
-        }
-
-        WebElement submitButton = driver.findElement(By.xpath("//button[@type='submit']"));
-        submitButton.click();
+    @Test ( priority = 1 )
+    void executeLoginTest() throws IOException, InterruptedException {
+        Login loginTest = new Login();
+        loginTest.Setup();
+        loginTest.loging();
     }
     @Test(priority = 2)
     void shift() throws InterruptedException {
@@ -60,7 +40,8 @@ public class Trip_Vehicles {
         WebElement create_Brand = driver.findElement(By.xpath("//*[@id=\"nova\"]/div[2]/div[2]/div[1]/div[1]/div[2]/div/a"));
         create_Brand.click();
     }
-    @Test(priority = 1)
+
+    @Test ( priority = 3 )
     void data() throws InterruptedException, IOException {
 
         String filePath = "src/test/java/Input_user_data/Trip_user_data/vehicles"; // Replace with the path to your userdata.txt file
@@ -111,12 +92,14 @@ public class Trip_Vehicles {
         //WebElement Add_Seat_Layout = driver.findElement(By.id("name-default-text-field"));
         //Add_Seat_Layout.click();
     }
-    @Test(priority = 1)
+
+    @Test ( priority = 4 )
     void submit() {
         WebElement fleetField_submit = driver.findElement(By.xpath("//button[@type='submit']"));
         fleetField_submit.click();
     }
-    @Test(priority = 1)
+
+    @Test ( priority = 5 )
     void Quite()
 
         {

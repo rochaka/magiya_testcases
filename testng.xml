@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Staff/Desktop/magiya_testcases/src/test/java">
+        <classes>
+            <class name="Registration.registration">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="Shift"/>
+                    <include name="User"/>
+                    <include name="Submit"/>
+                    <include name="compire"/>
+                    <include name="quit"/>
+                </methods>
+            </class>
+            <class name="Fleet_Management.Fleet_Counter">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="Button"/>
+                    <include name="Create"/>
+                    <include name="Submit"/>
+                    <include name="quite"/>
+                </methods>
+            </class>
+            <class name="Fleet_Management.Fleet_Routes">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="shift"/>
+                    <include name="Data"/>
+                    <include name="submit"/>
+                    <include name="Quite"/>
+                </methods>
+            </class>
+            <class name="Fleet_Management.Fleet_Stations">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="Button"/>
+                    <include name="Create"/>
+                    <include name="Submit"/>
+                    <include name="exit"/>
+                </methods>
+            </class>
+            <class name="Fleet_Management.Fleet_Type">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="shift"/>
+                    <include name="Data"/>
+                    <include name="submit"/>
+                    <include name="exit"/>
+                </methods>
+            </class>
+            <class name="Fleet_Management.Fleet_brands">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="button"/>
+                    <include name="Data"/>
+                    <include name="submit"/>
+                    <include name="exit"/>
+                </methods>
+            </class>
+            <class name="Trip_Management.Trip_Vehicles">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="shift"/>
+                    <include name="data"/>
+                    <include name="submit"/>
+                    <include name="Quite"/>
+                </methods>
+            </class>
+            <class name="Trip_Management.Trips">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="shift"/>
+                    <include name="data"/>
+                    <include name="submit"/>
+                    <include name="exit"/>
+                </methods>
+            </class>
+            <class name="Trip_Management.schedules">
+                <methods>
+                    <include name="executeLoginTest"/>
+                    <include name="shift"/>
+                    <include name="data"/>
+                    <include name="submit"/>
+                    <include name="exit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
