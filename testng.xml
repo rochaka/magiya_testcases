@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Staff/Desktop/magiya_testcases/src/test/java/Function_tests">
+        <classes>
+            <class name="Function_tests.Registration.registration"> </class>
+
+            <class name="Function_tests.Fleet_Management.Fleet_brands"></class>
+            <class name="Function_tests.Fleet_Management.Fleet_Stations"></class>
+            <class name="Function_tests.Fleet_Management.Fleet_Type"></class>
+            <class name="Function_tests.Fleet_Management.Fleet_Counter"></class>
+            <class name="Function_tests.Fleet_Management.Fleet_Routes"></class>
+            <class name="Function_tests.Trip_Management.Trips"></class>
+            <class name="Function_tests.Trip_Management.Trip_Vehicles"></class>
+            <class name="Function_tests.Trip_Management.schedules">
+            </class>
+        </classes>
+    </test>
+</suite>
